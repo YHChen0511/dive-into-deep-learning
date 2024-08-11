@@ -1,0 +1,16 @@
+*.html
+*.js
+*.tags
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.swp
+*.vrb
+*.synctex.gz
+
+main.py
