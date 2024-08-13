@@ -53,7 +53,8 @@ class CovLayer(nn.Module):
                 
                 x_slice = x_padded[:, :, h_start:h_end, w_start:w_end]
                 
-                out[:, :, i, j] = torch.einsum('nchw,oihw->no', x_slice, self.weight)
+                for k in range(self.out_channels):
+                    out[:, k, i, j] = torch.sum(x_slice * self.weight[k, :, :, :], dim=(1, 2, 3))
                 
                 if self.bias is not None:
                     out[:, :, i, j] += self.bias
