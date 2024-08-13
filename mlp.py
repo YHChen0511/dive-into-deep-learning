@@ -12,7 +12,7 @@ class MLP(nn.Module):
 
     def forward(self, x):
         for i in range(len(self.weight)):
-            if self.dropout > 0:
+            if self.dropout > 0 and self.training:
                 x = nn.functional.dropout(x, p=self.dropout, training=self.training)                 
             x = x @ self.weight[i] + self.b[i]
             if i != len(self.weight) - 1:
