@@ -16,4 +16,6 @@ __pycache__
 .vscode
 test.py
 clash-linux-amd64
-data
+**/data
+**/output
+*.pth
