@@ -13,6 +13,7 @@
 *.vrb
 *.synctex.gz
 __pycache__
-main.py
+.vscode
+test.py
 clash-linux-amd64
 data
